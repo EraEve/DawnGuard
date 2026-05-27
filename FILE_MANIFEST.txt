@@ -1,0 +1,22 @@
+MAPFM Medical AI repaired package file manifest
+
+- mapfm_ecosystem_repaired.py: repaired source derived from the original DOCX code.
+- utils.py: extracted utilities, MiniLM embedding backend, compatibility embedding fallback.
+- exceptions.py: coded exception hierarchy.
+- logging_config.py: structured Loguru logging.
+- config_loader.py: YAML config and hot-reload helper.
+- api.py: FastAPI REST endpoints.
+- redis_bus.py: optional Redis queue wrapper.
+- desensitizer.py: PII masking helper.
+- audit_logger.py: audit event JSONL writer.
+- traceability.py: complete decision trace persistence.
+- config.yaml: deployable configuration defaults.
+- requirements.txt: Python dependencies.
+- tests/: unit tests for utilities, retrieval, TFA, DMA fallback, exceptions.
+- original/: untouched extracted Python source plus source DOCX and prompt DOCX.
+
+[Update - 2026-05-19]
+- original/heterogeneous_multi_agent_ecosystem.py
+  Exact standalone .py file uploaded by the user and confirmed to match the prior Word document code, aside from a terminal newline.
+- original/GU_YUANJIE_original.py
+  Replaced with the exact standalone .py copy for byte-level consistency with the uploaded Python file.

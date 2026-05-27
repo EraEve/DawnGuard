@@ -1,0 +1,54 @@
+# === MAPFM HMAE 医疗多智能体系统 依赖 ===
+# 更新日期: 2026-05-27
+# 新增 MedTsLLM-v1.5 本地部署依赖
+
+# ── 现有核心依赖 (保留) ──
+numpy
+pandas
+scikit-learn
+requests
+loguru
+PyYAML
+tqdm
+
+# ── Ollama 推理框架 ──
+ollama
+
+# ── 语义嵌入 ──
+sentence-transformers
+
+# ── 向量检索 ──
+faiss-cpu
+
+# ── Web 服务 ──
+fastapi
+uvicorn
+
+# ── 消息队列 ──
+redis
+
+# ── 测试 ──
+pytest
+
+# ── MedTsLLM 新增依赖 ──
+
+# 多模态数据预处理 (HuggingFace Transformers)
+# 用于加载 tokenizer、preprocessor_config 等配置文件
+# 注意: 主推理由 Ollama 承担, transformers 仅用于预处理管线
+transformers>=4.36.0
+
+# PyTorch (数据预处理 + GPU 硬件检测)
+# 推荐安装 GPU 版本以获得最佳性能:
+#   CUDA 12.1: pip install torch>=2.1.0 --index-url https://download.pytorch.org/whl/cu121
+#   CUDA 11.8: pip install torch>=2.1.0 --index-url https://download.pytorch.org/whl/cu118
+#   CPU only:  pip install torch>=2.1.0 --index-url https://download.pytorch.org/whl/cpu
+torch>=2.1.0
+
+# 医学影像处理 (CT/X-ray/MRI 预处理)
+pillow>=10.0.0
+
+# 环境变量管理 (.env 文件加载)
+python-dotenv>=1.0.0
+
+# 硬件资源监控 (自动检测 CPU/内存/GPU 资源)
+psutil>=5.9.0

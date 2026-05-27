@@ -1,0 +1,48 @@
+{
+  "timestamp": "2026-05-27 18:07:27",
+  "checks": {
+    "dependencies": true,
+    "biobert_cached": true,
+    "adapter_file": true,
+    "inference": true,
+    "mapfm_integration": true
+  },
+  "sample_output": {
+    "short_term_risk": 0.5481114983558655,
+    "mid_term_risk": 0.5158988237380981,
+    "long_term_risk": 0.5523532629013062,
+    "engine": "MedTsLLM"
+  },
+  "all_pass": true,
+  "smoke_tests": [
+    {
+      "name": "Hypertension + Bed Rest",
+      "short": 0.47426190972328186,
+      "mid": 0.5264344215393066,
+      "long": 0.5352465510368347,
+      "ok": true
+    },
+    {
+      "name": "Hypoglycemia Emergency",
+      "short": 0.4435199201107025,
+      "mid": 0.47779354453086853,
+      "long": 0.5252184271812439,
+      "ok": true
+    },
+    {
+      "name": "Stable Post-Op",
+      "short": 0.4060412645339966,
+      "mid": 0.4867667853832245,
+      "long": 0.538286566734314,
+      "ok": true
+    },
+    {
+      "name": "Heart Failure + Infection",
+      "short": 0.40603572130203247,
+      "mid": 0.4867614805698395,
+      "long": 0.5382918119430542,
+      "ok": true
+    }
+  ],
+  "pass_rate": "4/4"
+}

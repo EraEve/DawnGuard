@@ -1,0 +1,23 @@
+# 4-bit 量化 — 消费级 GPU 首选, 需 16GB 显存
+FROM C:\Users\Lenovo\Desktop\MAPFM_medical_AI_repaired_complete\models\MedTsLLM-v1.5-multimodal
+
+TEMPLATE """{{.System}}
+患者信息：
+诊断结果：{{.Diagnosis}}
+生命体征数据：{{.VitalSigns}}
+检验结果：{{.LabResults}}
+临床文本：{{.ClinicalNotes}}
+
+请根据以上信息，预测患者未来24小时内的病情恶化风险，并输出结构化的风险报告。
+"""
+
+SYSTEM "你是一名专业的临床医生，擅长分析患者的多模态医疗数据，预测病情恶化风险。你的回答必须严谨、准确、符合医学常识。"
+PARAMETER temperature 0.1
+PARAMETER top_p 0.9
+PARAMETER num_ctx 8192
+PARAMETER num_gpu 48
+PARAMETER stop "</s>"
+PARAMETER stop "用户："
+
+# 4-bit 量化优化 — 减少显存占用
+PARAMETER num_thread 8
